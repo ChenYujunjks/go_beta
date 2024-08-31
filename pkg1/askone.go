@@ -14,15 +14,16 @@ import (
 )
 
 func Ask_one() {
-
-	fmt.Println("|-模块1：简单学习------------------------|")
+	fmt.Println("")
+	fmt.Println("||||||||||||||||||||||||||||||||||||")
+	fmt.Println("|您现在位于模块1：简单学习---------|")
 	fmt.Println("|请输入一个数字来选择要运行的函数: |")
 	fmt.Println("|1: 运行匿名函数                   |")
 	fmt.Println("|2: 运行 runtime 查看CPU核心       |")
-	fmt.Println("|3: 查看Day1 func      |")
-	fmt.Println("|4: 查看Day2 error    |")
-	fmt.Println("|5: 查看Day3 interface    |")
-	fmt.Println("|6: 查看Day4 struct   |")
+	fmt.Println("|3: 查看Day1 func                  |")
+	fmt.Println("|4: 查看Day2 error                 |")
+	fmt.Println("|5: 查看Day3 interface             |")
+	fmt.Println("|6: 查看Day4 struct                |")
 	fmt.Println("|0: 退出                           |")
 	fmt.Println("|----------------------------------|")
 

@@ -11,16 +11,17 @@ import (
 )
 
 func main() {
-	fmt.Println("|----------------------------------|")
-	fmt.Println("|请输入一个数字来选择要运行的模块: |")
-	fmt.Println("|1: 普通                         |")
-	fmt.Println("|2: Goroutine            |")
-	fmt.Println("|3: Test MySql Connection          |")
-	fmt.Println("|0: 退出                           |")
-	fmt.Println("|----------------------------------|")
-	// 获取用户输入
+
 	reader := bufio.NewReader(os.Stdin)
 	for {
+		fmt.Println("|----------------------------------|")
+		fmt.Println("|请输入一个数字来选择要运行的模块: |")
+		fmt.Println("|1: 普通                         |")
+		fmt.Println("|2: Goroutine                   |")
+		fmt.Println("|3: tBD      |")
+		fmt.Println("|0: 退出                           |")
+		fmt.Println("|----------------------------------|")
+		// 获取用户输入
 		fmt.Print("请输入选项: ")
 		input, _ := reader.ReadString('\n')
 		input = strings.TrimSpace(input) // 去除空白字符
