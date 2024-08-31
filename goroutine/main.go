@@ -1,8 +1,6 @@
-package main
+package goroutine
 
 import (
-	gor "beta/goroutine"
-	utils "beta/pkg1"
 	"bufio"
 	"fmt"
 	"os"
@@ -10,14 +8,16 @@ import (
 	"strings"
 )
 
-func main() {
+func Ask_goroutine() {
 	fmt.Println("|----------------------------------|")
-	fmt.Println("|请输入一个数字来选择要运行的模块: |")
-	fmt.Println("|1: 普通                         |")
-	fmt.Println("|2: Goroutine            |")
+	fmt.Println("|请输入一个数字来选择要运行的函数: |")
+	fmt.Println("|1: 运行匿名函数                   |")
+	fmt.Println("|2: 运行 runtime 查看CPU核心       |")
 	fmt.Println("|3: Test MySql Connection          |")
+	fmt.Println("|4: Test PostgreSql Connection     |")
 	fmt.Println("|0: 退出                           |")
 	fmt.Println("|----------------------------------|")
+
 	// 获取用户输入
 	reader := bufio.NewReader(os.Stdin)
 	for {
@@ -35,11 +35,7 @@ func main() {
 		// 根据用户输入的数字来调用相应的函数
 		switch choice {
 		case 1:
-			utils.Ask_one()
-		case 2:
-			gor.Ask_goroutine()
-		case 3:
-			fmt.Println("TBD!")
+
 		case 0:
 			fmt.Println("|--------------退出程序------------|")
 			return

@@ -1,8 +1,11 @@
-package main
+package utils
 
 import (
-	gor "beta/goroutine"
-	utils "beta/pkg1"
+	errr "beta/pkg1/error"
+	funcc "beta/pkg1/func"
+	interf_test "beta/pkg1/interface"
+	struct_l "beta/pkg1/struct"
+
 	"bufio"
 	"fmt"
 	"os"
@@ -10,14 +13,19 @@ import (
 	"strings"
 )
 
-func main() {
-	fmt.Println("|----------------------------------|")
-	fmt.Println("|请输入一个数字来选择要运行的模块: |")
-	fmt.Println("|1: 普通                         |")
-	fmt.Println("|2: Goroutine            |")
-	fmt.Println("|3: Test MySql Connection          |")
+func Ask_one() {
+
+	fmt.Println("|-模块1：简单学习------------------------|")
+	fmt.Println("|请输入一个数字来选择要运行的函数: |")
+	fmt.Println("|1: 运行匿名函数                   |")
+	fmt.Println("|2: 运行 runtime 查看CPU核心       |")
+	fmt.Println("|3: 查看Day1 func      |")
+	fmt.Println("|4: 查看Day2 error    |")
+	fmt.Println("|5: 查看Day3 interface    |")
+	fmt.Println("|6: 查看Day4 struct   |")
 	fmt.Println("|0: 退出                           |")
 	fmt.Println("|----------------------------------|")
+
 	// 获取用户输入
 	reader := bufio.NewReader(os.Stdin)
 	for {
@@ -35,11 +43,17 @@ func main() {
 		// 根据用户输入的数字来调用相应的函数
 		switch choice {
 		case 1:
-			utils.Ask_one()
+			Anon_func()
 		case 2:
-			gor.Ask_goroutine()
+			Go_runtime()
 		case 3:
-			fmt.Println("TBD!")
+			funcc.Day1_Func()
+		case 4:
+			errr.Error_F()
+		case 5:
+			interf_test.Intereiafoewj()
+		case 6:
+			struct_l.Struct_jjj()
 		case 0:
 			fmt.Println("|--------------退出程序------------|")
 			return
