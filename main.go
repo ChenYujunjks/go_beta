@@ -35,7 +35,7 @@ func main() {
 		case 1:
 			Ask_one()
 		case 2:
-			
+			Ask_goroutine()
 		case 3:
 			fmt.Println("TBD!")
 		case 0:

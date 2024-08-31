@@ -1,8 +1,13 @@
 package main
 
 import (
+	"beta/sql"
 	"beta/utils"
-	"beta/utils/sql"
+	errr "beta/utils/error"
+	funcc "beta/utils/func"
+	interf_test "beta/utils/interface"
+	struct_l "beta/utils/struct"
+
 	"bufio"
 	"fmt"
 	"os"
@@ -15,8 +20,10 @@ func Ask_one() {
 	fmt.Println("|请输入一个数字来选择要运行的函数: |")
 	fmt.Println("|1: 运行匿名函数                   |")
 	fmt.Println("|2: 运行 runtime 查看CPU核心       |")
-	fmt.Println("|3: Test MySql Connection          |")
-	fmt.Println("|4: Test PostgreSql Connection     |")
+	fmt.Println("|3: 查看Day1 func      |")
+	fmt.Println("|4: 查看Day2 error    |")
+	fmt.Println("|5: 查看Day3 interface    |")
+	fmt.Println("|6: 查看Day4 struct   |")
 	fmt.Println("|0: 退出                           |")
 	fmt.Println("|----------------------------------|")
 
@@ -41,9 +48,13 @@ func Ask_one() {
 		case 2:
 			utils.Go_runtime()
 		case 3:
-			sql.MySql_test()
+			funcc.Day1_Func()
 		case 4:
-			sql.PostgreSQL_Test()
+			errr.Error_F()
+		case 5:
+			interf_test.Intereiafoewj()
+		case 6:
+			struct_l.Struct_jjj()
 		case 0:
 			fmt.Println("|--------------退出程序------------|")
 			return
@@ -54,6 +65,7 @@ func Ask_one() {
 }
 
 func Ask_goroutine() {
+	fmt.Println("|模块1：简单学习-------------------|")
 	fmt.Println("|----------------------------------|")
 	fmt.Println("|请输入一个数字来选择要运行的函数: |")
 	fmt.Println("|1: 运行匿名函数                   |")
