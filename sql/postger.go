@@ -24,11 +24,23 @@ func PostgreSQL_Test() {
 	// 自动迁移模式
 	db.AutoMigrate(&User{})
 
-	// 创建一个用户
-	db.Create(&User{Name: "Yujun"})
+	// 查询是否已经存在名为 "Yujun" 的用户
+	/*var existingUser User
+	result := db.Where("name = ?", "Yujun").First(&existingUser)
 
-	// 查询刚刚创建的用户
-	var user User
-	db.First(&user, 1) // 根据主键查询
-	fmt.Println("User:", user.Name)
+	if result.RowsAffected > 0 {
+		fmt.Println("User already exists:", existingUser.Name)
+	} else {
+		// 如果用户不存在，则创建一个新的用户
+		db.Create(&User{Name: "Yujun"})
+		fmt.Println("New user created: Yujun")
+	}
+	*/
+	var users []User
+	db.Find(&users)
+	fmt.Println("All users in the database:")
+	for _, user := range users {
+		fmt.Printf("ID: %d, Name: %s\n", user.ID, user.Name)
+	}
+
 }

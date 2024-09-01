@@ -56,6 +56,8 @@ func Ask_one() {
 			interf_test.Intereiafoewj()
 		case 6:
 			struct_l.Struct_jjj()
+		case 7:
+			defer_test()
 		case 0:
 			fmt.Println("|--------------退出程序------------|")
 			return
