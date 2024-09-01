@@ -24,6 +24,7 @@ func Ask_one() {
 	fmt.Println("|4: 查看Day2 error                 |")
 	fmt.Println("|5: 查看Day3 interface             |")
 	fmt.Println("|6: 查看Day4 struct                |")
+	fmt.Println("|7: 查看defer的用法                 |")
 	fmt.Println("|0: 退出                           |")
 	fmt.Println("|----------------------------------|")
 

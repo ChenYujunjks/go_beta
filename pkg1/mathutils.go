@@ -36,3 +36,11 @@ func demoGarbageCollection() {
 	}
 	// 无需手动释放s，Go的垃圾回收器会处理未使用的内存
 }
+
+func defer_test() {
+	fmt.Println("Start")
+	defer fmt.Println("Deferred")
+	defer fmt.Println("Second")
+	defer fmt.Println("Third")
+	fmt.Println("End")
+}
