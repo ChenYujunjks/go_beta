@@ -42,7 +42,7 @@ func main() {
 		case 3:
 			fmt.Println("TBD!")
 		case 0:
-			fmt.Println("|--------------退出程序------------|")
+			fmt.Println("|--------------退出总程序------------|")
 			return
 		default:
 			fmt.Println("无效输入，请重新输入")

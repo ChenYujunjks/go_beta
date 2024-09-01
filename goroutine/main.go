@@ -9,12 +9,12 @@ import (
 )
 
 func Ask_goroutine() {
+	fmt.Println("|**********************************|")
+	fmt.Println("|您位于2模块：Goroutine-------------|")
 	fmt.Println("|----------------------------------|")
 	fmt.Println("|请输入一个数字来选择要运行的函数: |")
 	fmt.Println("|1: 运行匿名函数                   |")
-	fmt.Println("|2: 运行 runtime 查看CPU核心       |")
-	fmt.Println("|3: Test MySql Connection          |")
-	fmt.Println("|4: Test PostgreSql Connection     |")
+	fmt.Println("|2:       |")
 	fmt.Println("|0: 退出                           |")
 	fmt.Println("|----------------------------------|")
 
@@ -35,7 +35,7 @@ func Ask_goroutine() {
 		// 根据用户输入的数字来调用相应的函数
 		switch choice {
 		case 1:
-
+			DemoConcurrency()
 		case 0:
 			fmt.Println("|--------------退出程序------------|")
 			return
