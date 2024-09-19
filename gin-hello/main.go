@@ -1,7 +1,7 @@
 package main
 
 import (
-	c "gin/intro/gin-intro/controllers"
+	c "gin_intro/controllers"
 	"log"
 
 	"github.com/gin-gonic/gin"
