@@ -2,24 +2,16 @@ package main
 
 import "fmt"
 
-// Define a Node structure
-type Node struct {
-	Value int
-	Left  *Node
-	Right *Node
-}
-
-// Insert a value into BST
 func (n *Node) Insert(value int) *Node {
 	if n == nil {
-		return &Node{Value: value}
+		return &Node{Value: value} // 递归基准条件：当前节点为空，创建新节点
 	}
 	if value < n.Value {
-		n.Left = n.Left.Insert(value)
+		n.Left = n.Left.Insert(value) // 递归调用，向左子树插入
 	} else if value > n.Value {
-		n.Right = n.Right.Insert(value)
+		n.Right = n.Right.Insert(value) // 递归调用，向右子树插入
 	}
-	return n
+	return n 
 }
 
 // Search for a value

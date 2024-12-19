@@ -2,13 +2,6 @@ package main
 
 import "fmt"
 
-type Node struct {
-	Value  int
-	Left   *Node
-	Right  *Node
-	Height int
-}
-
 // Utility to get node height
 func height(n *Node) int {
 	if n == nil {
@@ -33,7 +26,7 @@ func (n *Node) balanceFactor() int {
 }
 
 // Placeholder for rotation and insertion logic
-func (n *Node) Insert(value int) *Node {
+func (n *Node) Insert_AVL(value int) *Node {
 	// AVL Insertion logic should be added here, including rotations
 	// For now, this is a placeholder for demonstration.
 	return n
