@@ -1,9 +1,12 @@
-package main
+package avl
 
-import "fmt"
+import (
+	"algorithm/tree/bst"
+	"fmt"
+)
 
 // Utility to get node height
-func height(n *Node) int {
+func height(n *bst.Node) int {
 	if n == nil {
 		return 0
 	}
@@ -11,7 +14,7 @@ func height(n *Node) int {
 }
 
 // Update node height
-func (n *Node) updateHeight() {
+func (n *bst.Node) updateHeight() {
 	lh, rh := height(n.Left), height(n.Right)
 	if lh > rh {
 		n.Height = lh + 1
@@ -21,12 +24,12 @@ func (n *Node) updateHeight() {
 }
 
 // Calculate balance factor
-func (n *Node) balanceFactor() int {
+func (n *bst.Node) balanceFactor() int {
 	return height(n.Left) - height(n.Right)
 }
 
 // Placeholder for rotation and insertion logic
-func (n *Node) Insert_AVL(value int) *Node {
+func (n *bst.Node) Insert_AVL(value int) *bst.Node {
 	// AVL Insertion logic should be added here, including rotations
 	// For now, this is a placeholder for demonstration.
 	return n
