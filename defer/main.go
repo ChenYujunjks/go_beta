@@ -34,7 +34,6 @@ func testDeferWithFile() {
 	fmt.Println("Wrote to file")
 }
 
-// 模拟日志记录
 func testDeferWithLogging() {
 	fmt.Println("\n== 日志记录示例 ==")
 	log.Println("Start processing")
