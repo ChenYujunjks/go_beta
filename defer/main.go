@@ -42,8 +42,37 @@ func testDeferWithLogging() {
 	fmt.Println("Doing some work...")
 }
 
-func main() {
-	testDeferWithMutex()
-	testDeferWithFile()
-	testDeferWithLogging()
+func printAnything(v interface{}) {
+	switch val := v.(type) {
+	case int:
+		fmt.Println("int:", val)
+	case string:
+		fmt.Println("string:", val)
+	default:
+		fmt.Println("unknown type")
+	}
 }
+func printType(v interface{}) {
+	fmt.Printf("类型是: %T\n", v)
+}
+func main() {
+	// 测试 printAnything 函数，传入不同类型的参数
+	printAnything(1)       
+	printAnything("hello")  
+	printAnything(true)   
+
+	// 测试 printType 函数，显示参数的具体类型
+	printType(1)      
+	printType("hello")    
+	printType(true)  
+
+	// 测试互斥锁的延迟释放
+	testDeferWithMutex()   // 演示 defer 在锁释放中的应用
+
+	// 测试文件的延迟关闭
+	testDeferWithFile()    // 演示 defer 在文件操作中的应用
+
+	// 测试日志的延迟记录
+	testDeferWithLogging() // 演示 defer 在日志记录中的应用
+}
+
