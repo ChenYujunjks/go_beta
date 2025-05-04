@@ -57,22 +57,21 @@ func printType(v interface{}) {
 }
 func main() {
 	// 测试 printAnything 函数，传入不同类型的参数
-	printAnything(1)       
-	printAnything("hello")  
-	printAnything(true)   
+	printAnything(1)
+	printAnything("hello")
+	printAnything(true)
 
 	// 测试 printType 函数，显示参数的具体类型
-	printType(1)      
-	printType("hello")    
-	printType(true)  
+	printType(1)
+	printType("hello")
+	printType(true)
 
 	// 测试互斥锁的延迟释放
-	testDeferWithMutex()   // 演示 defer 在锁释放中的应用
+	testDeferWithMutex()
 
 	// 测试文件的延迟关闭
-	testDeferWithFile()    // 演示 defer 在文件操作中的应用
+	testDeferWithFile()
 
 	// 测试日志的延迟记录
-	testDeferWithLogging() // 演示 defer 在日志记录中的应用
+	testDeferWithLogging()
 }
-
