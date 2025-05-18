@@ -23,7 +23,7 @@ func main() {
 		s := spinner.New(spinner.CharSets[14], 100*time.Millisecond) // 可选多种样式
 		s.Start()		
 		time.Sleep(2 * time.Second) // 模拟长任务		
-		fmt.Println("No command provided")
+		fmt.Println("\nNo command provided")
 		s.Stop()
 
 		chegg() //cheggaaa pb
