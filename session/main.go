@@ -1,0 +1,50 @@
+package main
+
+import (
+	"github.com/gin-gonic/gin"
+
+	"jwt-go/controllers"
+	"jwt-go/db"
+	"jwt-go/middlewares"
+	"jwt-go/models"
+)
+
+func main() {
+	r := gin.Default()
+	
+	// 静态文件
+	r.Static("/static", "./static")
+
+	// 初始化数据库
+	db.InitDB()
+	models.AutoMigrate(db.DB)
+	r.LoadHTMLGlob("templates/*")
+
+	// 中间件
+	r.Use(middlewares.InitSession())
+
+	r.POST("/api/register", controllers.Register)
+	r.POST("/api/login", controllers.Login)
+	r.POST("/api/logout", controllers.Logout)
+	r.GET("/api/me", controllers.GetMe)
+
+	// 页面路由
+	r.GET("/", middlewares.AuthRequired(), controllers.ShowHomePage)
+	r.GET("/login", controllers.ShowLoginPage)
+	r.GET("/register", controllers.ShowRegisterPage)
+	r.GET("/admin", controllers.ShowUsersPage)
+	// 注册路由
+
+	r.GET("/add", controllers.GetAdd)
+	r.POST("/add", controllers.PostAdd)
+	//auth
+
+	r.GET("/old-page", controllers.RedirectToAdd)
+	r.GET("/slice-any", controllers.GetSliceAny)
+	r.GET("/slice-struct", controllers.GetSliceStruct)
+	r.GET("/number", controllers.GetNumber)
+	r.GET("/string", controllers.GetString)
+	r.GET("/map", controllers.GetMap)
+
+	r.Run(":8080")
+}

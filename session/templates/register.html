@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>注册</title>
+</head>
+<body>
+  <h2>注册</h2>
+  <form id="registerForm">
+    <input type="text" placeholder="用户名" id="username" required />
+    <input type="password" placeholder="密码" id="password" required />
+    <button type="submit">注册</button>
+  </form>
+  <a href="/login">已有账号？登录</a>
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      const res = await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ username, password })
+      });
+      const data = await res.json();
+      if (data.message) {
+        location.href = "/";
+      } else {
+        alert(data.error);
+      }
+    });
+  </script>
+</body>
+</html>
