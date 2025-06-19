@@ -5,7 +5,6 @@ import (
 	"jwt-go/db"
 	"jwt-go/models"
 	"net/http"
-	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
@@ -41,20 +40,6 @@ func GetUpload(c *gin.Context) {
 	c.HTML(http.StatusOK, "upload.html", nil)
 }
 
-func PostAdd(c *gin.Context) {
-	n1 := c.PostForm("number1")
-	n2 := c.PostForm("number2")
-	num1, err1 := strconv.ParseFloat(n1, 64)
-	num2, err2 := strconv.ParseFloat(n2, 64)
-
-	data := gin.H{}
-	if err1 != nil || err2 != nil {
-		data["Result"] = "无效输入，请填写数字"
-	} else {
-		data["Result"] = num1 + num2
-	}
-	c.HTML(http.StatusOK, "index.html", data)
-}
 func GetSliceAny(c *gin.Context) {
 	data := []any{"string", 123, true, map[string]any{"ITIS A MAP!!": "value"}}
 	c.JSON(http.StatusOK, data)
