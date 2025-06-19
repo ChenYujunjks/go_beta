@@ -50,3 +50,7 @@ func PostAdd(c *gin.Context) {
 	}
 	c.HTML(http.StatusOK, "index.html", data)
 }
+func GetSliceAny(c *gin.Context) {
+	data := []any{"string", 123, true, map[string]any{"ITIS A MAP!!": "value"}}
+	c.JSON(http.StatusOK, data)
+}
