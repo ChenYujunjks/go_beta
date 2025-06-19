@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"jwt-go/db"
 	"jwt-go/models"
 	"net/http"
@@ -14,6 +15,10 @@ func ShowUsersPage(c *gin.Context) {
 	if err := db.DB.Find(&users).Error; err != nil {
 		c.String(http.StatusInternalServerError, "数据库查询失败: %v", err)
 		return
+	}
+	fmt.Println("User count:", len(users))
+	for _, u := range users {
+		fmt.Printf("ID=%d, Username=%s\n", u.ID, u.Username)
 	}
 	c.HTML(http.StatusOK, "users.html", gin.H{
 		"users": users,
