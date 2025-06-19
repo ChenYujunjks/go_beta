@@ -33,8 +33,7 @@ func main() {
 	r.GET("/login", controllers.ShowLoginPage)
 	r.GET("/register", controllers.ShowRegisterPage)
 	r.GET("/admin", controllers.ShowUsersPage)
-	// 注册路由
-	r.POST("/add", controllers.PostAdd)
+
 	r.GET("/slice-any", controllers.GetSliceAny)
 	r.Run(":8080")
 }
