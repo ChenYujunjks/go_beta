@@ -1,57 +1,59 @@
-# Go Beta 项目
+# 🧪 Go Beta: 学习 & 实验仓库
 
-这是一个用于学习和探索 Go 语言的项目仓库，涵盖了从基础语法到 Web 框架、CLI 工具、并发编程等多个方面的实践案例。
+[![Go Version](https://img.shields.io/badge/go-1.21+-blue)](https://golang.org/doc/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/ChenYujunjks/go_beta?style=social)](https://github.com/ChenYujunjks/go_beta/stargazers)
 
-This is a personal Go learning and experimentation repo, including basic syntax, web frameworks, CLI tools, concurrency models, and more.
+这是一个面向正在学习 Go 的开发者的实践型项目仓库，涵盖从基础语法、Web 框架（Gin）、并发编程，到 CLI 工具、JWT 认证、泛型等内容。  
+本仓库展示了我在学习 Go 过程中的代码尝试与模块拆解，适合希望快速上手并参考实战项目结构的朋友。
+
+> A personal Go learning & experimentation repo: exploring syntax, Gin, goroutines, CLI, generics, JWT, and more.
 
 ---
 
 ## 📁 项目结构 Project Structure
 
 ```
+
 go-beta/
 │
-├── legacy/                 # Go 第一版代码，结构较旧
-│   ├── algorithm/          # 算法练习与实现（排序、搜索等）
-│   ├── ginhello/           # 使用 Gin Web 框架的示例
-│   ├── gointro/            # Go 入门教程代码
-│   ├── swagger/            # Swagger API 文档集成示例
-│   ├── ui/                 # 与前端或终端交互相关的代码
-│   └── cli/                # 命令行工具开发示例
+├── legacy/             # 初期结构：多个独立学习模块
+│   ├── gointro/        # Go 入门语法与类型实践
+│   ├── ginhello/       # 使用 Gin 编写基础 Web API
+│   ├── cli/            # 自建 CLI 工具示例
+│   ├── jwt/            # JWT 登录认证机制实现
+│   ├── ui/             # 基本交互/终端输出示例
+│   └── gointro/        # 早期入门练习
 │
-├── defer/                  # Go 中 defer 用法的深入理解与实验
-├── generics/               # Go 泛型功能的学习与应用（Go 1.18+）
-├── jwt/                    # JWT 身份认证机制的实现与测试
-├── goroutine/              # 并发编程：Goroutine 与 Channel 示例
-└── README.md               # 项目说明文档
-```
+├── generics/           # Go 1.18+ 泛型实践
+├── goroutine/          # Goroutine 并发与 Channel 练习
+├── defer/              # defer 执行机制与作用域分析
+└── README.md           # 项目说明
+
+````
 
 ---
 
-## 🧠 学习目标 Learning Goals
+## 🎯 学习目标 Learning Goals
 
-- 熟悉 Go 的基础语法和编程范式
-- 掌握 Gin Web 框架开发 API
-- 理解并发模型，实践 Goroutines 和 Channels
-- 使用 Swagger 进行接口文档自动化
-- 利用泛型提升代码复用性
-- 实现 JWT 登录认证流程
-- 构建基本 CLI 工具
-- 掌握 defer 的底层机制和使用场景
+- 熟悉 Go 的基本语法与核心特性（defer、struct、error 等）
+- 掌握 Gin 框架构建 RESTful API
+- 理解 Goroutine 并发模型与 Channel 通信
+- 使用泛型提升代码复用与抽象能力
+- 实现 JWT 登录认证的基本流程
+- 了解 CLI 工具开发流程（flag、cobra 等）
+- 通过项目实战逐步掌握真实开发技巧
 
 ---
 
-## 🚀 快速开始 Quick Start
+## 💡 适合人群
 
-本项目没有统一的主程序，建议进入各个子文件夹阅读代码并逐个运行：
+* 正在学习 Go 编程语言的新手或自学者
+* 想通过实战了解 Gin、JWT、Goroutine、泛型等 Go 特性的开发者
+* 喜欢“边学边做”的编程方式
 
-```bash
-cd legacy/ginhello
-go run main.go
-```
+---
 
-如需安装依赖，可使用：
+欢迎 Star 或 Fork，如你对某个模块感兴趣也欢迎提 issue 或交流建议 🙌
 
-```bash
-go mod tidy
-```
+
