@@ -21,9 +21,8 @@ go-beta/
 │   ├── gointro/        # Go 入门语法与类型实践
 │   ├── ginhello/       # 使用 Gin 编写基础 Web API
 │   ├── cli/            # 自建 CLI 工具示例
-│   ├── jwt/            # JWT 登录认证机制实现
-│   ├── ui/             # 基本交互/终端输出示例
-│   └── gointro/        # 早期入门练习
+│   ├── jwt/            # JWT 登录认证机制实现        
+│   └── ui/      
 │
 ├── generics/           # Go 1.18+ 泛型实践
 ├── goroutine/          # Goroutine 并发与 Channel 练习
