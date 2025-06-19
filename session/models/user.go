@@ -8,6 +8,7 @@ type User struct {
 	Password string
 }
 
-func AutoMigrate(db *gorm.DB) {
-	db.AutoMigrate(&User{})
+// models/migrate.go
+func AutoMigrate(db *gorm.DB) error {
+	return db.AutoMigrate(&User{})
 }

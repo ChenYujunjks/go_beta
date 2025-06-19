@@ -11,11 +11,10 @@ import (
 
 func main() {
 	r := gin.Default()
-	
+
 	// 静态文件
 	r.Static("/static", "./static")
 
-	// 初始化数据库
 	db.InitDB()
 	models.AutoMigrate(db.DB)
 	r.LoadHTMLGlob("templates/*")
@@ -37,14 +36,7 @@ func main() {
 
 	r.GET("/add", controllers.GetAdd)
 	r.POST("/add", controllers.PostAdd)
-	//auth
-
-	r.GET("/old-page", controllers.RedirectToAdd)
 	r.GET("/slice-any", controllers.GetSliceAny)
-	r.GET("/slice-struct", controllers.GetSliceStruct)
-	r.GET("/number", controllers.GetNumber)
-	r.GET("/string", controllers.GetString)
 	r.GET("/map", controllers.GetMap)
-
 	r.Run(":8080")
 }

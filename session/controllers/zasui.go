@@ -21,29 +21,9 @@ func GetUser(c *gin.Context) {
 	})
 }
 
-func RedirectToAdd(c *gin.Context) {
-	c.Redirect(http.StatusMovedPermanently, "/add")
-}
-
 func GetSliceAny(c *gin.Context) {
 	data := []any{"string", 123, true, map[string]any{"key": "value"}}
 	c.JSON(http.StatusOK, data)
-}
-
-func GetSliceStruct(c *gin.Context) {
-	data := []Item{
-		{"item1", 1},
-		{"item2", 2},
-	}
-	c.JSON(http.StatusOK, data)
-}
-
-func GetNumber(c *gin.Context) {
-	c.JSON(http.StatusOK, 12345)
-}
-
-func GetString(c *gin.Context) {
-	c.JSON(http.StatusOK, "Hello, World!")
 }
 
 func GetMap(c *gin.Context) {
