@@ -29,12 +29,11 @@ func main() {
 
 	// 页面路由
 	r.GET("/", middlewares.AuthRequired(), controllers.ShowHomePage)
+	r.POST("/", middlewares.AuthRequired(), controllers.PostAdd)
 	r.GET("/login", controllers.ShowLoginPage)
 	r.GET("/register", controllers.ShowRegisterPage)
 	r.GET("/admin", controllers.ShowUsersPage)
 	// 注册路由
-
-	r.GET("/add", controllers.ShowAdd)
 	r.POST("/add", controllers.PostAdd)
 	r.GET("/slice-any", controllers.GetSliceAny)
 	r.Run(":8080")
