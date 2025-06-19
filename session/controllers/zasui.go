@@ -9,34 +9,11 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type Item struct {
-	Name  string `json:"name"`
-	Value int    `json:"value"`
-}
-
-func GetUser(c *gin.Context) {
-	id := c.Param("id")
-	c.JSON(http.StatusOK, gin.H{
-		"user_id": id,
-	})
-}
-
 func GetSliceAny(c *gin.Context) {
-	data := []any{"string", 123, true, map[string]any{"key": "value"}}
+	data := []any{"string", 123, true, map[string]any{"ITIS A MAP!!": "value"}}
 	c.JSON(http.StatusOK, data)
 }
 
-func GetMap(c *gin.Context) {
-	data := map[string]string{
-		"key1": "value1",
-		"key2": "value2",
-	}
-	c.JSON(http.StatusOK, data)
-}
-
-func GetAdd(c *gin.Context) {
-	c.HTML(http.StatusOK, "add.html", nil)
-}
 
 // JSON 参数示例
 func PostAdd(c *gin.Context) {
@@ -55,10 +32,6 @@ func PostAdd(c *gin.Context) {
 	}
 	result := num1 + num2
 	c.JSON(http.StatusOK, gin.H{"result": result})
-}
-
-func GetUpload(c *gin.Context) {
-	c.HTML(http.StatusOK, "upload.html", nil)
 }
 
 // 处理multipart forms提交文件时默认的内存限制是32 MiB

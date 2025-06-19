@@ -34,9 +34,8 @@ func main() {
 	r.GET("/admin", controllers.ShowUsersPage)
 	// 注册路由
 
-	r.GET("/add", controllers.GetAdd)
+	r.GET("/add", controllers.ShowAdd)
 	r.POST("/add", controllers.PostAdd)
 	r.GET("/slice-any", controllers.GetSliceAny)
-	r.GET("/map", controllers.GetMap)
 	r.Run(":8080")
 }

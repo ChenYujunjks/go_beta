@@ -9,7 +9,7 @@ import (
 )
 
 func ShowUsersPage(c *gin.Context) {
-	var users []models.User // 假设你的模型叫 User
+	var users []models.User
 	if err := db.DB.Find(&users).Error; err != nil {
 		c.String(http.StatusInternalServerError, "数据库查询失败: %v", err)
 		return
@@ -29,4 +29,11 @@ func ShowLoginPage(c *gin.Context) {
 
 func ShowRegisterPage(c *gin.Context) {
 	c.HTML(http.StatusOK, "register.html", gin.H{})
+}
+func ShowAdd(c *gin.Context) {
+	c.HTML(http.StatusOK, "add.html", nil)
+}
+
+func GetUpload(c *gin.Context) {
+	c.HTML(http.StatusOK, "upload.html", nil)
 }
