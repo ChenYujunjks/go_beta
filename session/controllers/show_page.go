@@ -5,6 +5,7 @@ import (
 	"jwt-go/db"
 	"jwt-go/models"
 	"net/http"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
@@ -25,7 +26,23 @@ func ShowUsersPage(c *gin.Context) {
 }
 
 func ShowHomePage(c *gin.Context) {
-	c.HTML(http.StatusOK, "index.html", gin.H{})
+	number1 := c.Query("number1")
+	number2 := c.Query("number2")
+
+	data := gin.H{}
+
+	if number1 != "" && number2 != "" {
+		num1, err1 := strconv.ParseFloat(number1, 64)
+		num2, err2 := strconv.ParseFloat(number2, 64)
+
+		if err1 == nil && err2 == nil {
+			data["Result"] = num1 + num2
+		} else {
+			data["Result"] = "输入格式错误"
+		}
+	}
+
+	c.HTML(http.StatusOK, "index.html", data)
 }
 
 func ShowLoginPage(c *gin.Context) {

@@ -29,7 +29,6 @@ func main() {
 
 	// 页面路由
 	r.GET("/", middlewares.AuthRequired(), controllers.ShowHomePage)
-	r.POST("/", middlewares.AuthRequired(), controllers.PostAdd)
 	r.GET("/login", controllers.ShowLoginPage)
 	r.GET("/register", controllers.ShowRegisterPage)
 	r.GET("/admin", controllers.ShowUsersPage)
