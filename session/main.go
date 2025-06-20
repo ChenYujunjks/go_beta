@@ -12,9 +12,6 @@ import (
 func main() {
 	r := gin.Default()
 
-	// 静态文件
-	r.Static("/static", "./static")
-
 	db.InitDB()
 	models.AutoMigrate(db.DB)
 	r.LoadHTMLGlob("templates/*")
@@ -33,6 +30,6 @@ func main() {
 	r.GET("/register", controllers.ShowRegisterPage)
 	r.GET("/admin", controllers.ShowUsersPage)
 
-	r.GET("/slice-any", controllers.GetSliceAny)
+	r.GET("/slice-any", middlewares.AuthRequired(), controllers.GetSliceAny)
 	r.Run(":8080")
 }
